@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#12145a">
+<title>Milad Expo & Lomba Pelajar 2026 | FEB UMS Rappang</title>
+<meta name="description" content="Expo milad dan lomba untuk siswa SMA/SMK se-Kabupaten Sidenreng Rappang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#top"><img src="assets/logo_umsr.png" alt="Logo UMS Rappang" width="36" height="36"><span id="namaHima">FEB UMS RAPPANG</span></a>
+  <nav id="nav"><a href="#lomba">Lomba</a><a href="#expo">Expo prodi</a><a href="#rundown">Rundown</a><a href="#faq">FAQ</a><a href="#kontak">Kontak</a></nav>
+  <a class="btn btn-sm btn-out" href="admin.html">Admin</a>
+  <a class="btn btn-sm" href="#daftar">Daftar</a>
+  <button class="menu-btn" id="menuBtn" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="nav">☰</button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Untuk siswa SMA/SMK se-Kabupaten Sidenreng Rappang</p>
+      <h1><span>Milad Expo</span><span class="o">&amp; Lomba</span><span>Pelajar 2026</span></h1>
+      <p class="lead">Satu hari untuk adu ide lewat lomba, keliling stan tiga program studi, dan kenali kampus sebelum lulus sekolah.</p>
+      <div class="cta"><a class="btn" href="#daftar">Daftarkan tim sekolahmu</a><a class="btn btn-ghost" href="#lomba">Lihat lomba</a></div>
+    </div>
+    <aside class="tiket" aria-label="Info acara">
+      <div class="stiker" aria-hidden="true">Gratis<small>untuk semua pelajar</small></div>
+      <p class="tiket-judul">Menuju hari H</p>
+      <div class="cd" id="cd"><div><b id="cdH">00</b>hari</div><div><b id="cdJ">00</b>jam</div><div><b id="cdM">00</b>menit</div><div><b id="cdD">00</b>detik</div></div>
+      <dl><dt>Tanggal</dt><dd id="infoTgl">-</dd><dt>Tempat</dt><dd>Kampus UMS Rappang</dd><dt>Biaya</dt><dd>Gratis</dd></dl>
+    </aside>
+  </div>
+</section>
+
+<div class="marquee-wrap"><div class="marquee" aria-hidden="true"><div>Lomba ✦ Expo prodi ✦ Talkshow alumni ✦ Gratis ✦ SMA/SMK Sidrap ✦ Lomba ✦ Expo prodi ✦ Talkshow alumni ✦ Gratis ✦ SMA/SMK Sidrap ✦ Lomba ✦ Expo prodi ✦ Talkshow alumni ✦ Gratis ✦ SMA/SMK Sidrap ✦ Lomba ✦ Expo prodi ✦ Talkshow alumni ✦ Gratis ✦ SMA/SMK Sidrap ✦ Lomba ✦ Expo prodi ✦ Talkshow alumni ✦ Gratis ✦ SMA/SMK Sidrap ✦ Lomba ✦ Expo prodi ✦ Talkshow alumni ✦ Gratis ✦ SMA/SMK Sidrap ✦ </div></div></div>
+
+<section id="lomba" class="blok">
+  <div class="wrap">
+    <h2>Pilih lombamu</h2>
+    <p class="sub">Klik lomba yang kamu mau, formulir pendaftaran langsung terbuka.</p>
+    <div class="lomba" id="listLomba"></div>
+  </div>
+</section>
+
+<section id="expo" class="blok gelap">
+  <div class="wrap">
+    <h2>Expo tiga program studi</h2>
+    <p class="sub">Di sela lomba, peserta dan guru bebas berkunjung ke stan prodi: demo, konsultasi, dan info beasiswa.</p>
+    <div class="prodi" id="listProdi"></div>
+  </div>
+</section>
+
+<section id="rundown" class="blok">
+  <div class="wrap">
+    <h2>Rundown acara</h2>
+    <p class="sub">Jadwal hari H dari pagi sampai penutupan.</p>
+    <div class="prodi" id="listRundown"></div>
+    <p class="hint">Jadwal dapat berubah. Perubahan diumumkan lewat grup peserta.</p>
+  </div>
+</section>
+
+<section id="faq" class="blok">
+  <div class="wrap narrow">
+    <h2>Pertanyaan umum</h2>
+    <div id="listFaq"></div>
+  </div>
+</section>
+
+<section id="daftar" class="blok kuning">
+  <div class="wrap narrow">
+    <h2>Daftar tim</h2>
+    <p class="sub" id="stDaftar">Semua kolom wajib diisi. Konfirmasi dikirim lewat WhatsApp.</p>
+
+    <div class="form-wrap" id="formWrap">
+      <form id="form" novalidate>
+        <label>Kategori lomba<select name="lomba" id="selLomba" required></select></label>
+        <div class="dua">
+          <label><span id="lblNama">Nama lengkap peserta</span><input name="nama" required autocomplete="name"></label>
+          <label>Kelas<select name="kelas" required><option value="">Pilih kelas</option><option>X</option><option>XI</option><option>XII</option></select></label>
+        </div>
+        <label>Asal sekolah<input name="sekolah" required autocomplete="organization"></label>
+        <label>Nomor WhatsApp peserta<input name="wa" type="tel" required inputmode="tel" placeholder="08xxxxxxxxxx"></label>
+        <div id="boxTim" hidden>
+          <label>Anggota tim <span class="hint" id="hintTim"></span><textarea name="anggota" rows="2" placeholder="Contoh: Dinda, Fajar"></textarea></label>
+        </div>
+        <div class="dua">
+          <label>Nama guru pembina<input name="pembina" required></label>
+          <label>Nomor WhatsApp pembina<input name="wapembina" type="tel" required inputmode="tel" placeholder="08xxxxxxxxxx"></label>
+        </div>
+        <input name="catatan" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
+        <button class="btn" id="kirim" type="submit">Kirim pendaftaran</button>
+      </form>
+
+      <div class="tutup-box" id="tutupBox" hidden>
+        <div>
+          <h3>Pendaftaran Belum Dibuka</h3>
+          <p>Terima kasih atas antusiasmenya. Pendaftaran lomba belum dibuka.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="kontak" class="blok">
+  <div class="wrap narrow">
+    <h2>Narahubung</h2>
+    <ul class="kontak" id="listKontak"></ul>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© 2026 Panitia Milad Expo, Fakultas Ekonomi dan Bisnis, Universitas Muhammadiyah Sidenreng Rappang</div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
