@@ -35,7 +35,7 @@ const CONFIG = {
   ],
   rundown: [
     ["08.00", "Registrasi ulang dan pembukaan stan expo"],
-    ["09.00", "Pembukaan dan sambutan milad"],
+    ["09.00", "Pembukaan dan sambutan Expo UMKM"],
     ["09.30", "Babak penyisihan lomba"],
     ["12.00", "Ishoma dan kunjungan stan prodi"],
     ["13.30", "Final lomba dan talkshow alumni"],

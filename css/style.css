@@ -224,7 +224,7 @@ p.hint {
 
 /* Judul hero: tiap baris bereaksi saat disorot kursor */
 .hero h1 {
-  font-size: clamp(40px, 7.5vw, 92px);
+  font-size: clamp(40px, 6.4vw, 92px);
   font-weight: 800;
   letter-spacing: -0.03em;
   animation: naik 0.8s ease both;
