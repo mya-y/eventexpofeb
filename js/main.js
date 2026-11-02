@@ -80,7 +80,7 @@ if (C.demo) {
     .catch(() => {});
 }
 
-const noHpOk = (v) => v.replace(/\D/g, "").length >= 9;
+const noHpOk = (v) => /^(\+62|62|0)8\d{8,11}$/.test(v.replace(/[\s-]/g, ""));
 $("#form").addEventListener("submit", async (e) => {
   e.preventDefault();
   const f = e.target;

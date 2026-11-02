@@ -59,8 +59,11 @@ const bars = (o, n = 99) => {
 };
 const wa = (n) => {
   n = String(n).replace(/\D/g, "");
-  return n.startsWith("0") ? "62" + n.slice(1) : n;
+  if (n.startsWith("0")) return "62" + n.slice(1);
+  if (n.startsWith("8")) return "62" + n;
+  return n;
 };
+
 const tersaring = () => {
   const q = $("#cari").value.toLowerCase();
   const l = $("#fLomba").value;
@@ -185,12 +188,13 @@ $("#tbody").addEventListener("click", async (e) => {
   const d = e.target.dataset;
   if (!d || !e.target.closest("tr") || !e.target.closest("tr").dataset.id) return;
   const r = cariBaris(e.target);
-  if ("konf" in d) {
-    r[10] = r[10] === "Sudah" ? "Belum" : "Sudah";
-    render();
-    const j = await api({ action: "konfirmasi", id: r[0], value: r[10] });
-    if (!j.ok) toast("Gagal menyimpan perubahan.");
-  }
+ if ("konf" in d) {
+  const lama = r[10];
+  r[10] = lama === "Sudah" ? "Belum" : "Sudah";
+  render();
+  const j = await api({ action: "konfirmasi", id: r[0], value: r[10] }).catch(() => ({ ok: false }));
+  if (!j.ok) { r[10] = lama; render(); toast("Gagal menyimpan. Perubahan dibatalkan."); }
+}
   if ("hapus" in d) {
     if (!confirm(`Hapus pendaftaran ${r[4]}?`)) return;
     const j = await api({ action: "hapus", id: r[0] });
